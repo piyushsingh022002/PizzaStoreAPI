@@ -58,7 +58,7 @@ public class CounterController : ControllerBase
             ChangeType = $"Counter {action}"
         };
 
-        var webhookUrl = $"{Request.Scheme}://{Request.Host}/api/webhook/user-change";
+        var webhookUrl = $"{Request.Scheme}://{Request.Host}/api/admin/notifications/receive";
         await client.PostAsJsonAsync(webhookUrl, payload);
 
         return Ok(new { message = "Counter updated and webhook triggered", counter = _userCounters[username] });
