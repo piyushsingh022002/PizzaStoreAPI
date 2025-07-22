@@ -26,6 +26,7 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero
     };
 });
+builder.Services.AddHttpClient();
 
 // MongoDB setup
 var mongoSettings = builder.Configuration.GetSection("MongoSettings");
